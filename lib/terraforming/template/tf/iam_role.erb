@@ -2,6 +2,7 @@
 resource "aws_iam_role" "<%= module_name_of(role) %>" {
     name               = "<%= role.role_name %>"
     path               = "<%= role.path %>"
+    description        = "<%= role.description %>"
     assume_role_policy = <<POLICY
 <%= prettify_policy(role.assume_role_policy_document, unescape: true) %>
 POLICY
